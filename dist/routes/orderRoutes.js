@@ -1,12 +1,7 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const orderController_1 = require("../controllers/orderController");
-const router = express_1.default.Router();
-router.post('/', orderController_1.createOrder);
-router.get('/', orderController_1.getOrders);
-router.get('/by-email', orderController_1.getOrdersByEmail);
-exports.default = router;
+import express from 'express';
+import { createOrder, getOrders, getOrdersByEmail } from '../controllers/orderController.js';
+const router = express.Router();
+router.post('/', createOrder);
+router.get('/', getOrders);
+router.get('/by-email', getOrdersByEmail);
+export default router;
