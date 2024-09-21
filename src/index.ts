@@ -11,10 +11,8 @@ app.use(express.json());
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 
-mongoose.connect('mongodb://localhost:27017/ecommerce', {
- 
- 
-})
+mongoose.connect('mongodb+srv://saifuddin:piY6nEcsdaSVKkv7@cluster0.wuiqqjn.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=Cluster0', {}) 
+
 .then(() => console.log('MongoDB connected'))
 .catch((err: Error) => console.log(err));
 
