@@ -22,7 +22,7 @@ export const createProduct = async (req, res) => {
         if (error)
             return res.status(400).json({ success: false, message: error.details[0].message });
         const { name, description, price, category, tags, variants, inventory } = req.body;
-        // Check if the product already exists based on a unique field (like name)
+        // Checking if the product already exists based on a unique field (like name)
         let product = await Product.findOne({ name });
         console.log('test :', product);
         if (product) {

@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { response } from 'express';
 import mongoose from 'mongoose';
 import productRoutes from './routes/ProductRoutes';
 import orderRoutes from './routes/OrderRoutes';
@@ -7,6 +7,9 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
+app.use('/', (req, res) => {
+  res.send('Hello, World! , My backend server is successfully working ');
+});
 
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
@@ -19,4 +22,9 @@ mongoose.connect('mongodb+srv://saifuddin:piY6nEcsdaSVKkv7@cluster0.wuiqqjn.mong
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+  response.status(201).json({
+    success: true,
+    message: 'Product created successfully!',
+   
+});
 });

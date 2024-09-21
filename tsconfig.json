@@ -35,7 +35,7 @@
 //     // "types": [],                                      /* Specify type package names to be included without being referenced in a source file. */
 //     // "allowUmdGlobalAccess": true,                     /* Allow accessing UMD globals from modules. */
 //     // "moduleSuffixes": [],                             /* List of file name suffixes to search when resolving a module. */
-//     // "allowImportingTsExtensions": true,               /* Allow imports to include TypeScript file extensions. Requires '--moduleResolution bundler' and either '--noEmit' or '--emitDeclarationOnly' to be set. */
+//     "allowImportingTsExtensions": true,               /* Allow imports to include TypeScript file extensions. Requires '--moduleResolution bundler' and either '--noEmit' or '--emitDeclarationOnly' to be set. */
 //     // "resolvePackageJsonExports": true,                /* Use the package.json 'exports' field when resolving package imports. */
 //     // "resolvePackageJsonImports": true,                /* Use the package.json 'imports' field when resolving imports. */
 //     // "customConditions": [],                           /* Conditions to set in addition to the resolver-specific defaults when resolving imports. */
@@ -115,20 +115,25 @@
 // }
 {
   "compilerOptions": {
-    "target": "ES2020",                          // Set the target JavaScript version
-    "module": "ESNext",                          // Specify the module code generation
-    "moduleResolution": "node",                   // Use Node.js module resolution strategy
-    "esModuleInterop": true,                      // Enables emit interoperability between CommonJS and ES Modules
-    "skipLibCheck": true,                         // Skip type checking of declaration files
-    "forceConsistentCasingInFileNames": true,    // Ensure that file names are consistent
-    "outDir": "./dist",                           // Redirect output structure to the "dist" directory
-    "rootDir": "./src",                           // Specify the root directory of input files
-    "strict": true,                               // Enable all strict type-checking options
-    "baseUrl": ".",                               // Base directory to resolve non-relative module names
-    "paths": {                                    // Specify paths for module resolution
+   
+
+    "target": "ES2023",
+    "module": "ES2020",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    
+   
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
       "*": ["node_modules/*", "src/types/*"]
-    }
+    },
+   
   },
-  "include": ["src/**/*.ts"],                     // Include all TypeScript files in the src directory
-  "exclude": ["node_modules", "dist"]            // Exclude these directories
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
