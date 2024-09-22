@@ -1,18 +1,19 @@
-import express, { response } from 'express';
+import express from 'express';
 import mongoose from 'mongoose';
-import productRoutes from './routes/ProductRoutes';
-import orderRoutes from './routes/OrderRoutes';
+import productRoutes from './routes/ProductRoutes.js';
+import orderRoutes from './routes/OrderRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
-app.use('/', (req, res) => {
-  res.send('Hello, World! , My backend server is successfully working ');
-});
+
 
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
+app.use('/', (req, res) => {
+  res.send('Hello, World! , My backend server is successfully working 1234 ');
+});
 
 mongoose.connect('mongodb+srv://saifuddin:piY6nEcsdaSVKkv7@cluster0.wuiqqjn.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=Cluster0', {}) 
 
@@ -22,9 +23,6 @@ mongoose.connect('mongodb+srv://saifuddin:piY6nEcsdaSVKkv7@cluster0.wuiqqjn.mong
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  response.status(201).json({
-    success: true,
-    message: 'Product created successfully!',
-   
-});
+  
+
 });

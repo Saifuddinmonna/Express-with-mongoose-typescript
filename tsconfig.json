@@ -123,7 +123,11 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    
+    "resolveJsonModule": true,
+    "moduleSuffixes": [".js", ""],
+"allowJs": true,
+"checkJs": false,
+"noEmitOnError": false,
    
     "outDir": "./dist",
     "rootDir": "./src",
@@ -137,3 +141,4 @@
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }
+
