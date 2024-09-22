@@ -51,8 +51,7 @@ This project is a RESTful API designed for managing products and orders in an e-
    git clone https://github.com/your-username/repo-name.git
 Install dependencies:
 
-bash
-Copy code
+
 cd repo-name
 npm install
 Set up environment variables in .env:
@@ -61,12 +60,15 @@ makefile
 Copy code
 MONGO_URI=<your_mongo_uri>
 PORT=<your_preferred_port>
-Start the server:
 
-bash
-Copy code
+## Start the server:
+ npm start
+if you have you can use 
+ nodemon dist/index.js
+
 npm run dev
-API Endpoints
+
+## API Endpoints for this project
 Products:
 POST /api/products
 GET /api/products
@@ -80,4 +82,5 @@ GET /api/orders
 GET /api/orders?email=<email>
 
 License
-This project is open source and available under t.
+This project is open source and I make it for my  assignment.
+
